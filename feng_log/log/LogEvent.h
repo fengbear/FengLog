@@ -6,6 +6,7 @@
 #include <chrono>
 #include <string.h>
 #include "log/LogStream.h"
+#include "base/Thread.h"
 
 namespace feng {
 namespace log {
@@ -68,6 +69,30 @@ class LogEvent {
 public:
     // 表示时间的一个点
     using TimePoint = std::chrono::_V2::system_clock::time_point; 
+    typedef std::shared_ptr<LogEvent> ptr;
+    LogEvent(const std::string& loggerName,
+             LogLevel::Level level,
+             const char *file,
+             int32_t line,
+             uint32_t elapse,
+             uint32_t thread_id,
+             uint64_t time);
+
+    const std::string& getLoggerName() const { return loggerName_; }
+    const SourceFile& getFile() const { return file_; }
+    int32_t getLine() const { return line_; }
+    uint32_t getElapse() const { return elapse_; }
+    uint32_t getThreadId() const { return threadId_; }
+
+    uint64_t getTime() const { return time_; }
+    const std::string& getThreadName() const { return feng::Thread::getCurrentThreadName(); }
+    const LogStream::Buffer& getContent() const { return ss_.buffer(); }
+    LogLevel::Level getLevel() const { return level_; }
+
+    LogStream& getSS() { return ss_; }
+    void format(const char* fmt, ...);
+    void format(const char* fmt, va_list al);
+
 
 private:
     std::string loggerName_;          // 日志器名称
@@ -75,10 +100,8 @@ private:
     int32_t line_ = 0;                // 行号
     uint32_t elapse_ = 0;             // 启动到现在的毫秒数
     uint32_t threadId_ = 0;           // 线程ID 
-    TimePoint time_;                  // 时间戳
-    LogStream 
-
-
+    uint64_t time_;                  // 时间戳
+    LogStream ss_;                    // 事件内容
     LogLevel::Level level_;
 
 };
