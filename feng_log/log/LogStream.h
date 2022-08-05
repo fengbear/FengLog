@@ -4,7 +4,6 @@
 #include <string>
 #include <string.h>
 #include "base/noncopyable.h"
-#include <string_view>
 
 namespace feng {
 namespace log {
@@ -36,7 +35,7 @@ public:
     void reset() { cur_ = data_; }
     void bzero() { memset(data_, 0, sizeof(data_)); }
     
-    std::string toString() const { return string(data_, length()); }
+    std::string toString() const { return std::string(data_, length()); }
 private:
     const char* end() const { return data_ + sizeof(data_); }
 
@@ -53,7 +52,6 @@ public:
         buffer_.append(v ? "1" : "0", 1);
         return *this;
     }
-
     LogStream& operator<<(short);
     LogStream& operator<<(unsigned short);
     LogStream& operator<<(int);
@@ -113,7 +111,6 @@ private:
     void formatInteger(T);
 
     Buffer buffer_;
-
     static const  int kMaxNumericSize = 48;
 };
 

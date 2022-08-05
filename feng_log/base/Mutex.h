@@ -3,11 +3,12 @@
 
 #include <pthread.h>
 #include "base/noncopyable.h"
+#include <cstdio>
 
 namespace feng {
 
-class MutexLock : public noncopyable {
-
+class MutexLock : noncopyable {    
+friend class Condition;
 public:
     MutexLock() {
         // 初始化互斥锁
@@ -34,7 +35,7 @@ private:
 };
 
 /* RAII */
-class MutexLockGuard : public noncopyable {
+class MutexLockGuard : noncopyable {
 
 public:
     explicit MutexLockGuard(MutexLock &mutex) : mutex_(mutex) {

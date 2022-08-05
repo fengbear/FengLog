@@ -93,11 +93,5 @@ LogStream& LogStream::operator<<(long double v) {
     return *this;
 }
 
-
-
-
-
-
-
 } // namespace log
 } // namespace feng

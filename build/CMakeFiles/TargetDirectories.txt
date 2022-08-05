@@ -1,0 +1,4 @@
+/home/xiongfeng/FengLog/build/CMakeFiles/rebuild_cache.dir
+/home/xiongfeng/FengLog/build/CMakeFiles/asynlog_singlethread_test.out.dir
+/home/xiongfeng/FengLog/build/CMakeFiles/edit_cache.dir
+/home/xiongfeng/FengLog/build/CMakeFiles/feng_log.dir

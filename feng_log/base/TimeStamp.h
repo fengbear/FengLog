@@ -17,8 +17,7 @@ public:
 
     explicit TimeStamp(uint64_t microsecond = 0)
         : microSecond_(microsecond)
-    {
-    }
+    {}
     // 1s = 1000ms = 1000 000 us == 1000 000 000 ns
     // s
     uint64_t second() const noexcept { return microSecond_ / MicroSecondsPerSecond; }

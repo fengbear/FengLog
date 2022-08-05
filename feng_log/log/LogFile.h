@@ -53,22 +53,22 @@ public:
     bool rollFile();
 
 private:
-    void append_unlocked(const char* logline, int len);
+    void append_unlocked(const char* logline, int len); // 不加锁的append方式
 
-    static std::string getLogFileName(const std::string& basename, time_t* now);
+    static std::string getLogFileName(const std::string& basename, time_t* now); // 获取日志文件的名称
 
     const std::string basename_; // 文件名
     const off_t rollSize_;       // 日志file_缓冲区数据如果超过rollSize_ 就要用新的文件写日志
-    const int flushInterval_;    // flush间隔
+    const int flushInterval_;    // 日志写入间隔
     const int checkEveryN_;      // 每调用checkEveryN_次日志写，就滚动一次日志 
 
     int count_;
 
     std::unique_ptr<MutexLock> mutex_;
     time_t startOfPeriod_;       // 开始的周期，在同一个周期内的日志数据会写入同一个日志文件中（如果数据不是太大的话）
-    time_t lastRoll_;            // 最后一次滚动日志的时间 
-    time_t lastFlush_;
-    std::unique_ptr<AppendFile> file_;
+    time_t lastRoll_;            // 上一次滚动日志的时间 
+    time_t lastFlush_;           // 上一次日志写入文件的时间
+    std::unique_ptr<AppendFile> file_; // 文件智能指针
 
     const static int kRollPerSeconds_ = 60*60*24; // 写新日志文件的周期 即一天24小时 换算为秒
 

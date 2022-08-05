@@ -8,7 +8,7 @@ namespace log
     const char* LogLevel::toString(LogLevel::Level level) {
         switch (level)
         {
-    #define XX(name) \ 
+    #define XX(name) \
         case LogLevel::name: \
             return #name; \
             break;

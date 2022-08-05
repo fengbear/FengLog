@@ -55,7 +55,7 @@ void AppendFile::append(const char* logline, const size_t len)
 }
 
 void AppendFile::flush() {
-    ::fflush(fp_);
+    ::fflush(fp_); // 从缓冲区刷到文件中
 }
 
 size_t AppendFile::write(const char* logline, size_t len)
@@ -77,11 +77,12 @@ LogFile::LogFile(const std::string& basename,
       flushInterval_(flushInterval),
       checkEveryN_(checkEveryN),
       count_(0),
+      mutex_(threadSafe ? new MutexLock : NULL),
       startOfPeriod_(0),
       lastRoll_(0),
       lastFlush_(0)
 {
-    assert(basename.find('/') == std::string::npos);
+    assert(basename.find('/') == std::string::npos);  // 断言basename不包含'/'
     rollFile();
 }
 
@@ -110,6 +111,7 @@ void LogFile::flush()
 }
 
 void LogFile::append_unlocked(const char* logline, int len) {
+    // 调用Appendfile智能指针将内容写到文件的缓冲区
     file_->append(logline, len);
     if (file_->writtenBytes() > rollSize_) {
         rollFile();

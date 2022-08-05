@@ -21,17 +21,18 @@ const std::string& Thread::getCurrentThreadName() {
 }
 
 Thread::Thread(Task task, const std::string& name)
-    :pthreadId_(0),
-    joined_(false),
-    task_(std::move(task)),
-    started_(false) {
+    : pthreadId_(0),
+      joined_(false),
+      task_(std::move(task)),
+      name_(name),
+      started_(false) {
         ++numThread_;
         setDefaultName();
         int ret = pthread_create(&pthreadId_, nullptr, &Thread::run, this);
         if (ret) {
             throw std::logic_error("pthread_create error");
         }
-        while(!started_);
+        while(!started_); // 等待线程成功运行
     }
 
 Thread::~Thread() {
@@ -70,7 +71,6 @@ void Thread::join() {
         pthreadId_ = 0;
         joined_ = true;
     }
-
 }
 
 }

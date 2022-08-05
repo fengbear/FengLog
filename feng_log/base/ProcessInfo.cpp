@@ -1,5 +1,5 @@
 #include "base/ProcessInfo.h"
-namespace haha{
+namespace feng{
 namespace ProcessInfo{
 
 pid_t pid()
