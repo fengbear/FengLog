@@ -118,7 +118,7 @@ void LogFormatter::init() {
         XX(l, LineFormatItem),              //l:行号
         XX(T, TabFormatItem),               //T:Tab
         // XX(F, FiberIdFormatItem),           //F:协程id
-        XX(N, ThreadNameFormatItem),        //N:线程名称
+        // XX(N, ThreadNameFormatItem),        //N:线程名称
 #undef XX
     };
 

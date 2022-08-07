@@ -77,7 +77,7 @@ LogFile::LogFile(const std::string& basename,
       flushInterval_(flushInterval),
       checkEveryN_(checkEveryN),
       count_(0),
-      mutex_(threadSafe ? new MutexLock : NULL),
+      mutex_(new MutexLock),
       startOfPeriod_(0),
       lastRoll_(0),
       lastFlush_(0)

@@ -19,9 +19,21 @@ CMakeFiles/feng_log.dir/feng_log/base/ProcessInfo.cpp.o: ../feng_log/base/Proces
 CMakeFiles/feng_log.dir/feng_log/base/ProcessInfo.cpp.o: ../feng_log/base/TimeStamp.h
 CMakeFiles/feng_log.dir/feng_log/base/ProcessInfo.cpp.o: ../feng_log/base/ProcessInfo.cpp
 
-CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/Thread.h
+CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/Mutex.h
 CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/noncopyable.h
+CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/CurrentThread.h
 CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/Thread.cpp
+CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o: ../feng_log/base/Thread.h
+
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/Mutex.h
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/Thread.h
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/ThreadPool.h
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/noncopyable.h
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/ThreadPool.cpp
 
 CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o: ../feng_log/base/TimeStamp.h
 CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o: ../feng_log/base/TimeStamp_test.cpp
@@ -30,6 +42,8 @@ CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o: ../feng_log/base/util.h
 CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o: ../feng_log/base/util.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/base/CurrentThread.h
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/base/Mutex.h
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/base/Thread.h
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/base/TimeStamp.h
@@ -41,6 +55,9 @@ CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/log/LogForma
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/log/LogStream.h
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/log/LogAppender.cpp
 
+CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/base/Mutex.h
 CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/base/Thread.h
 CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/base/noncopyable.h
 CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/log/LogEvent.h
@@ -54,6 +71,10 @@ CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o: ../feng_log/base/noncopyable
 CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o: ../feng_log/log/LogFile.h
 CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o: ../feng_log/log/LogFile.cpp
 
+CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/CurrentThread.h
+CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/Mutex.h
 CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/Thread.h
 CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/TimeStamp.h
 CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/base/noncopyable.h
@@ -67,6 +88,8 @@ CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o: ../feng_log/log/LogStream.
 CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o: ../feng_log/log/LogStream.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/base/CurrentThread.h
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/base/Mutex.h
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/base/Thread.h
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/base/TimeStamp.h
@@ -80,6 +103,8 @@ CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/log/Logger.h
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/log/Logger.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/base/Condition.h
+CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/base/CountDownLatch.h
+CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/base/CurrentThread.h
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/base/Mutex.h
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/base/Thread.h
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/base/TimeStamp.h

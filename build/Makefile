@@ -114,17 +114,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named asynlog_singlethread_test.out
+# Target rules for targets named asynlog_threadpool_test.out
 
 # Build rule for target.
-asynlog_singlethread_test.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 asynlog_singlethread_test.out
-.PHONY : asynlog_singlethread_test.out
+asynlog_threadpool_test.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 asynlog_threadpool_test.out
+.PHONY : asynlog_threadpool_test.out
 
 # fast build rule for target.
-asynlog_singlethread_test.out/fast:
-	$(MAKE) -f CMakeFiles/asynlog_singlethread_test.out.dir/build.make CMakeFiles/asynlog_singlethread_test.out.dir/build
-.PHONY : asynlog_singlethread_test.out/fast
+asynlog_threadpool_test.out/fast:
+	$(MAKE) -f CMakeFiles/asynlog_threadpool_test.out.dir/build.make CMakeFiles/asynlog_threadpool_test.out.dir/build
+.PHONY : asynlog_threadpool_test.out/fast
+
+#=============================================================================
+# Target rules for targets named synclog_threadpool_test.out
+
+# Build rule for target.
+synclog_threadpool_test.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 synclog_threadpool_test.out
+.PHONY : synclog_threadpool_test.out
+
+# fast build rule for target.
+synclog_threadpool_test.out/fast:
+	$(MAKE) -f CMakeFiles/synclog_threadpool_test.out.dir/build.make CMakeFiles/synclog_threadpool_test.out.dir/build
+.PHONY : synclog_threadpool_test.out/fast
+
+#=============================================================================
+# Target rules for targets named synclog_singlethread_test.out
+
+# Build rule for target.
+synclog_singlethread_test.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 synclog_singlethread_test.out
+.PHONY : synclog_singlethread_test.out
+
+# fast build rule for target.
+synclog_singlethread_test.out/fast:
+	$(MAKE) -f CMakeFiles/synclog_singlethread_test.out.dir/build.make CMakeFiles/synclog_singlethread_test.out.dir/build
+.PHONY : synclog_singlethread_test.out/fast
 
 #=============================================================================
 # Target rules for targets named feng_log
@@ -273,6 +299,33 @@ feng_log/base/Thread.s: feng_log/base/Thread.cpp.s
 feng_log/base/Thread.cpp.s:
 	$(MAKE) -f CMakeFiles/feng_log.dir/build.make CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.s
 .PHONY : feng_log/base/Thread.cpp.s
+
+feng_log/base/ThreadPool.o: feng_log/base/ThreadPool.cpp.o
+
+.PHONY : feng_log/base/ThreadPool.o
+
+# target to build an object file
+feng_log/base/ThreadPool.cpp.o:
+	$(MAKE) -f CMakeFiles/feng_log.dir/build.make CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o
+.PHONY : feng_log/base/ThreadPool.cpp.o
+
+feng_log/base/ThreadPool.i: feng_log/base/ThreadPool.cpp.i
+
+.PHONY : feng_log/base/ThreadPool.i
+
+# target to preprocess a source file
+feng_log/base/ThreadPool.cpp.i:
+	$(MAKE) -f CMakeFiles/feng_log.dir/build.make CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.i
+.PHONY : feng_log/base/ThreadPool.cpp.i
+
+feng_log/base/ThreadPool.s: feng_log/base/ThreadPool.cpp.s
+
+.PHONY : feng_log/base/ThreadPool.s
+
+# target to generate assembly for a file
+feng_log/base/ThreadPool.cpp.s:
+	$(MAKE) -f CMakeFiles/feng_log.dir/build.make CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.s
+.PHONY : feng_log/base/ThreadPool.cpp.s
 
 feng_log/base/TimeStamp_test.o: feng_log/base/TimeStamp_test.cpp.o
 
@@ -517,32 +570,86 @@ feng_log/log/LoggerManager.cpp.s:
 	$(MAKE) -f CMakeFiles/feng_log.dir/build.make CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.s
 .PHONY : feng_log/log/LoggerManager.cpp.s
 
-test/asynlog_singlethread_test.o: test/asynlog_singlethread_test.cpp.o
+test/asynlog_threadpool_test.o: test/asynlog_threadpool_test.cpp.o
 
-.PHONY : test/asynlog_singlethread_test.o
+.PHONY : test/asynlog_threadpool_test.o
 
 # target to build an object file
-test/asynlog_singlethread_test.cpp.o:
-	$(MAKE) -f CMakeFiles/asynlog_singlethread_test.out.dir/build.make CMakeFiles/asynlog_singlethread_test.out.dir/test/asynlog_singlethread_test.cpp.o
-.PHONY : test/asynlog_singlethread_test.cpp.o
+test/asynlog_threadpool_test.cpp.o:
+	$(MAKE) -f CMakeFiles/asynlog_threadpool_test.out.dir/build.make CMakeFiles/asynlog_threadpool_test.out.dir/test/asynlog_threadpool_test.cpp.o
+.PHONY : test/asynlog_threadpool_test.cpp.o
 
-test/asynlog_singlethread_test.i: test/asynlog_singlethread_test.cpp.i
+test/asynlog_threadpool_test.i: test/asynlog_threadpool_test.cpp.i
 
-.PHONY : test/asynlog_singlethread_test.i
+.PHONY : test/asynlog_threadpool_test.i
 
 # target to preprocess a source file
-test/asynlog_singlethread_test.cpp.i:
-	$(MAKE) -f CMakeFiles/asynlog_singlethread_test.out.dir/build.make CMakeFiles/asynlog_singlethread_test.out.dir/test/asynlog_singlethread_test.cpp.i
-.PHONY : test/asynlog_singlethread_test.cpp.i
+test/asynlog_threadpool_test.cpp.i:
+	$(MAKE) -f CMakeFiles/asynlog_threadpool_test.out.dir/build.make CMakeFiles/asynlog_threadpool_test.out.dir/test/asynlog_threadpool_test.cpp.i
+.PHONY : test/asynlog_threadpool_test.cpp.i
 
-test/asynlog_singlethread_test.s: test/asynlog_singlethread_test.cpp.s
+test/asynlog_threadpool_test.s: test/asynlog_threadpool_test.cpp.s
 
-.PHONY : test/asynlog_singlethread_test.s
+.PHONY : test/asynlog_threadpool_test.s
 
 # target to generate assembly for a file
-test/asynlog_singlethread_test.cpp.s:
-	$(MAKE) -f CMakeFiles/asynlog_singlethread_test.out.dir/build.make CMakeFiles/asynlog_singlethread_test.out.dir/test/asynlog_singlethread_test.cpp.s
-.PHONY : test/asynlog_singlethread_test.cpp.s
+test/asynlog_threadpool_test.cpp.s:
+	$(MAKE) -f CMakeFiles/asynlog_threadpool_test.out.dir/build.make CMakeFiles/asynlog_threadpool_test.out.dir/test/asynlog_threadpool_test.cpp.s
+.PHONY : test/asynlog_threadpool_test.cpp.s
+
+test/synclog_singlethread_test.o: test/synclog_singlethread_test.cpp.o
+
+.PHONY : test/synclog_singlethread_test.o
+
+# target to build an object file
+test/synclog_singlethread_test.cpp.o:
+	$(MAKE) -f CMakeFiles/synclog_singlethread_test.out.dir/build.make CMakeFiles/synclog_singlethread_test.out.dir/test/synclog_singlethread_test.cpp.o
+.PHONY : test/synclog_singlethread_test.cpp.o
+
+test/synclog_singlethread_test.i: test/synclog_singlethread_test.cpp.i
+
+.PHONY : test/synclog_singlethread_test.i
+
+# target to preprocess a source file
+test/synclog_singlethread_test.cpp.i:
+	$(MAKE) -f CMakeFiles/synclog_singlethread_test.out.dir/build.make CMakeFiles/synclog_singlethread_test.out.dir/test/synclog_singlethread_test.cpp.i
+.PHONY : test/synclog_singlethread_test.cpp.i
+
+test/synclog_singlethread_test.s: test/synclog_singlethread_test.cpp.s
+
+.PHONY : test/synclog_singlethread_test.s
+
+# target to generate assembly for a file
+test/synclog_singlethread_test.cpp.s:
+	$(MAKE) -f CMakeFiles/synclog_singlethread_test.out.dir/build.make CMakeFiles/synclog_singlethread_test.out.dir/test/synclog_singlethread_test.cpp.s
+.PHONY : test/synclog_singlethread_test.cpp.s
+
+test/synclog_threadpool_test.o: test/synclog_threadpool_test.cpp.o
+
+.PHONY : test/synclog_threadpool_test.o
+
+# target to build an object file
+test/synclog_threadpool_test.cpp.o:
+	$(MAKE) -f CMakeFiles/synclog_threadpool_test.out.dir/build.make CMakeFiles/synclog_threadpool_test.out.dir/test/synclog_threadpool_test.cpp.o
+.PHONY : test/synclog_threadpool_test.cpp.o
+
+test/synclog_threadpool_test.i: test/synclog_threadpool_test.cpp.i
+
+.PHONY : test/synclog_threadpool_test.i
+
+# target to preprocess a source file
+test/synclog_threadpool_test.cpp.i:
+	$(MAKE) -f CMakeFiles/synclog_threadpool_test.out.dir/build.make CMakeFiles/synclog_threadpool_test.out.dir/test/synclog_threadpool_test.cpp.i
+.PHONY : test/synclog_threadpool_test.cpp.i
+
+test/synclog_threadpool_test.s: test/synclog_threadpool_test.cpp.s
+
+.PHONY : test/synclog_threadpool_test.s
+
+# target to generate assembly for a file
+test/synclog_threadpool_test.cpp.s:
+	$(MAKE) -f CMakeFiles/synclog_threadpool_test.out.dir/build.make CMakeFiles/synclog_threadpool_test.out.dir/test/synclog_threadpool_test.cpp.s
+.PHONY : test/synclog_threadpool_test.cpp.s
 
 # Help Target
 help:
@@ -551,7 +658,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... asynlog_singlethread_test.out"
+	@echo "... asynlog_threadpool_test.out"
+	@echo "... synclog_threadpool_test.out"
+	@echo "... synclog_singlethread_test.out"
 	@echo "... edit_cache"
 	@echo "... feng_log"
 	@echo "... feng_log/base/Buffer.o"
@@ -569,6 +678,9 @@ help:
 	@echo "... feng_log/base/Thread.o"
 	@echo "... feng_log/base/Thread.i"
 	@echo "... feng_log/base/Thread.s"
+	@echo "... feng_log/base/ThreadPool.o"
+	@echo "... feng_log/base/ThreadPool.i"
+	@echo "... feng_log/base/ThreadPool.s"
 	@echo "... feng_log/base/TimeStamp_test.o"
 	@echo "... feng_log/base/TimeStamp_test.i"
 	@echo "... feng_log/base/TimeStamp_test.s"
@@ -596,9 +708,15 @@ help:
 	@echo "... feng_log/log/LoggerManager.o"
 	@echo "... feng_log/log/LoggerManager.i"
 	@echo "... feng_log/log/LoggerManager.s"
-	@echo "... test/asynlog_singlethread_test.o"
-	@echo "... test/asynlog_singlethread_test.i"
-	@echo "... test/asynlog_singlethread_test.s"
+	@echo "... test/asynlog_threadpool_test.o"
+	@echo "... test/asynlog_threadpool_test.i"
+	@echo "... test/asynlog_threadpool_test.s"
+	@echo "... test/synclog_singlethread_test.o"
+	@echo "... test/synclog_singlethread_test.i"
+	@echo "... test/synclog_singlethread_test.s"
+	@echo "... test/synclog_threadpool_test.o"
+	@echo "... test/synclog_threadpool_test.i"
+	@echo "... test/synclog_threadpool_test.s"
 .PHONY : help
 
 

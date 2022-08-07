@@ -85,7 +85,7 @@ public:
     uint32_t getThreadId() const { return threadId_; }
 
     uint64_t getTime() const { return time_; }
-    const std::string& getThreadName() const { return feng::Thread::getCurrentThreadName(); }
+    // const std::string& getThreadName() const { return feng::Thread::getCurrentThreadName(); }
     const LogStream::Buffer& getContent() const { return ss_.buffer(); }
     LogLevel::Level getLevel() const { return level_; }
 

@@ -69,6 +69,15 @@ set(
     uuid
 )
 
-add_executable(asynlog_singlethread_test.out test/asynlog_singlethread_test.cpp)                # 设置要生成可执行文件的代码
-add_dependencies(asynlog_singlethread_test.out feng_log)                               # 设置依赖关系
-target_link_libraries(asynlog_singlethread_test.out ${ALL_LIBS})                   # 设置要链接的库
+add_executable(synclog_singlethread_test.out test/synclog_singlethread_test.cpp)                # 设置要生成可执行文件的代码
+add_dependencies(synclog_singlethread_test.out feng_log)                               # 设置依赖关系
+target_link_libraries(synclog_singlethread_test.out ${ALL_LIBS})                   # 设置要链接的库
+
+add_executable(synclog_threadpool_test.out test/synclog_threadpool_test.cpp)                # 设置要生成可执行文件的代码
+add_dependencies(synclog_threadpool_test.out feng_log)                               # 设置依赖关系
+target_link_libraries(synclog_threadpool_test.out ${ALL_LIBS})                   # 设置要链接的库
+
+
+add_executable(asynlog_threadpool_test.out test/asynlog_threadpool_test.cpp)                # 设置要生成可执行文件的代码
+add_dependencies(asynlog_threadpool_test.out feng_log)                               # 设置依赖关系
+target_link_libraries(asynlog_threadpool_test.out ${ALL_LIBS})                   # 设置要链接的库

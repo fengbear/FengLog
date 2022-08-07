@@ -125,9 +125,22 @@ CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiongfeng/FengLog/feng_log/base/Thread.cpp -o CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.s
 
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: CMakeFiles/feng_log.dir/flags.make
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o: ../feng_log/base/ThreadPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o -c /home/xiongfeng/FengLog/feng_log/base/ThreadPool.cpp
+
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiongfeng/FengLog/feng_log/base/ThreadPool.cpp > CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.i
+
+CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiongfeng/FengLog/feng_log/base/ThreadPool.cpp -o CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.s
+
 CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o: ../feng_log/base/TimeStamp_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o -c /home/xiongfeng/FengLog/feng_log/base/TimeStamp_test.cpp
 
 CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.i: cmake_force
@@ -140,7 +153,7 @@ CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o: ../feng_log/base/util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o -c /home/xiongfeng/FengLog/feng_log/base/util.cpp
 
 CMakeFiles/feng_log.dir/feng_log/base/util.cpp.i: cmake_force
@@ -153,7 +166,7 @@ CMakeFiles/feng_log.dir/feng_log/base/util.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o: ../feng_log/log/LogAppender.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/LogAppender.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.i: cmake_force
@@ -166,7 +179,7 @@ CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o: ../feng_log/log/LogEvent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/LogEvent.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.i: cmake_force
@@ -179,7 +192,7 @@ CMakeFiles/feng_log.dir/feng_log/log/LogEvent.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o: ../feng_log/log/LogFile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/LogFile.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.i: cmake_force
@@ -192,7 +205,7 @@ CMakeFiles/feng_log.dir/feng_log/log/LogFile.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o: ../feng_log/log/LogFormatter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/LogFormatter.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.i: cmake_force
@@ -205,7 +218,7 @@ CMakeFiles/feng_log.dir/feng_log/log/LogFormatter.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o: ../feng_log/log/LogStream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/LogStream.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.i: cmake_force
@@ -218,7 +231,7 @@ CMakeFiles/feng_log.dir/feng_log/log/LogStream.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o: ../feng_log/log/Logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/Logger.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.i: cmake_force
@@ -231,7 +244,7 @@ CMakeFiles/feng_log.dir/feng_log/log/Logger.cpp.s: cmake_force
 
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: CMakeFiles/feng_log.dir/flags.make
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o: ../feng_log/log/LoggerManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o -c /home/xiongfeng/FengLog/feng_log/log/LoggerManager.cpp
 
 CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.i: cmake_force
@@ -249,6 +262,7 @@ feng_log_OBJECTS = \
 "CMakeFiles/feng_log.dir/feng_log/base/CountDownLatch.cpp.o" \
 "CMakeFiles/feng_log.dir/feng_log/base/ProcessInfo.cpp.o" \
 "CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o" \
+"CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o" \
 "CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o" \
 "CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o" \
 "CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o" \
@@ -267,6 +281,7 @@ feng_log_EXTERNAL_OBJECTS =
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/base/CountDownLatch.cpp.o
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/base/ProcessInfo.cpp.o
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o
+../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o
@@ -278,7 +293,7 @@ feng_log_EXTERNAL_OBJECTS =
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/feng_log/log/LoggerManager.cpp.o
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/build.make
 ../lib/release/libfeng_log.so: CMakeFiles/feng_log.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX shared library ../lib/release/libfeng_log.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiongfeng/FengLog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX shared library ../lib/release/libfeng_log.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/feng_log.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

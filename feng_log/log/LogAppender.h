@@ -42,6 +42,8 @@ protected:
     LogFormatter::ptr m_formatter;
 };
 
+/***************************************   同步 ********************************************/
+
 // 同步Appender
 class SyncLogAppender : public LogAppender {
 public:
@@ -73,6 +75,57 @@ private:
     uint64_t lastTime_;
 };
 
+/***************************************  异步 ********************************************/
+
+class AsyncLogAppender : public LogAppender {
+public:
+    AsyncLogAppender();
+    virtual ~AsyncLogAppender() { }
+    void setNotifyFunc(const std::function<void()> &notify_func) { notify_func_ = std::move(notify_func); }
+
+    bool empty() {
+        MutexLockGuard lock(*mutex_);
+        return buffer_.empty();
+    }
+
+protected:
+    typedef FixedBuffer<kLargeBuffer> Buffer;
+    typedef std::vector<std::unique_ptr<Buffer>> BufferVector;
+    typedef BufferVector::value_type BufferPtr;
+
+    // 输入缓冲区
+    BufferPtr currentBuffer_;  // 当前缓冲区
+    BufferPtr nextBuffer_;     // 预备缓冲区
+    BufferVector buffer_;      // 前端缓冲区队列 待写入文件的已填满的缓冲
+
+    // 输出缓冲区
+    BufferPtr newBuffer1;
+    BufferPtr newBuffer2;
+    BufferVector buffersToWrite;
+
+    // 唤醒日志线程
+    std::function<void()> notify_func_;
+};
+
+// 输出到文件的异步Appender
+class FileAsyncLogAppender : public AsyncLogAppender {
+public:
+    typedef std::shared_ptr<FileAsyncLogAppender> ptr;
+
+    FileAsyncLogAppender(const std::string &filepath,
+                        off_t rollSize);
+    ~FileAsyncLogAppender(){ 
+        file_->flush(); 
+    }
+    void append(const LogEvent& event) override;
+    void flush() override;
+    
+private:
+    std::string filepath_;
+    const off_t rollSize_;
+    std::unique_ptr<LogFile> file_;
+    uint64_t lastTime_;
+};
 
 } // log
 } // feng

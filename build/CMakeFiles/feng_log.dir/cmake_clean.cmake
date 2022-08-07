@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/feng_log.dir/feng_log/base/CountDownLatch.cpp.o"
   "CMakeFiles/feng_log.dir/feng_log/base/ProcessInfo.cpp.o"
   "CMakeFiles/feng_log.dir/feng_log/base/Thread.cpp.o"
+  "CMakeFiles/feng_log.dir/feng_log/base/ThreadPool.cpp.o"
   "CMakeFiles/feng_log.dir/feng_log/base/TimeStamp_test.cpp.o"
   "CMakeFiles/feng_log.dir/feng_log/base/util.cpp.o"
   "CMakeFiles/feng_log.dir/feng_log/log/LogAppender.cpp.o"

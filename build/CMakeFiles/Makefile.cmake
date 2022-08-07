@@ -116,6 +116,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/asynlog_singlethread_test.out.dir/DependInfo.cmake"
+  "CMakeFiles/asynlog_threadpool_test.out.dir/DependInfo.cmake"
+  "CMakeFiles/synclog_threadpool_test.out.dir/DependInfo.cmake"
+  "CMakeFiles/synclog_singlethread_test.out.dir/DependInfo.cmake"
   "CMakeFiles/feng_log.dir/DependInfo.cmake"
   )

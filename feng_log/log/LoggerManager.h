@@ -34,6 +34,8 @@
 
 #define FENG_LOG_SYNC_STDOUT_ROOT() feng::log::LoggerManager::getInstance().getSyncStdoutRoot()
 #define FENG_LOG_SYNC_FILE_ROOT() feng::log::LoggerManager::getInstance().getSyncFileRoot()
+#define FENG_LOG_ASYNC_FILE_ROOT() feng::log::LoggerManager::getInstance().getAsynFileRoot()
+
 
 namespace feng {
 namespace log {
@@ -88,6 +90,15 @@ public:
         return sync_root;
     }
     
+    // 异步日志器 写入文件
+    static Logger::ptr getAsynFileRoot() {
+        static std::shared_ptr<Logger> async_root = std::make_shared<AsyncLogger>(
+            "async_file_root",
+            default_flush_interval,
+            std::make_shared<FileAsyncLogAppender>(default_async_log_file, default_roll_size)
+        );
+        return async_root;
+    }
 private:
     MutexLock mutex_;
     std::map<std::string, Logger::ptr> loggers_;

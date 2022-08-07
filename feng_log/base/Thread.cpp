@@ -1,76 +1,112 @@
-#include "base/Thread.h"
+#include <assert.h>
+#include <errno.h>
+#include <linux/unistd.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <sys/prctl.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <memory>
 #include <iostream>
+#include "Thread.h"
+#include "CurrentThread.h"
+
+using namespace std;
 
 namespace feng {
 
-std::atomic<int> Thread::numThread_{0};
-
-static thread_local Thread* cur_thread = nullptr;
-static thread_local std::string cur_thread_name = "UNKONW";
-
-const Thread* Thread::getCurrentThread() {
-    return cur_thread;
+namespace CurrentThread {
+__thread int t_cachedTid = 0;
+__thread char t_tidString[32];
+__thread int t_tidStringLength = 6;
+__thread const char* t_threadName = "default";
 }
 
-const pthread_t Thread::getCurrentThreadId() {
-    return pthread_self();
-}
+pid_t gettid() { return static_cast<pid_t>(::syscall(SYS_gettid)); }
 
-const std::string& Thread::getCurrentThreadName() {
-    return cur_thread_name;
-}
-
-Thread::Thread(Task task, const std::string& name)
-    : pthreadId_(0),
-      joined_(false),
-      task_(std::move(task)),
-      name_(name),
-      started_(false) {
-        ++numThread_;
-        setDefaultName();
-        int ret = pthread_create(&pthreadId_, nullptr, &Thread::run, this);
-        if (ret) {
-            throw std::logic_error("pthread_create error");
-        }
-        while(!started_); // 等待线程成功运行
+void CurrentThread::cacheTid() {
+    if (t_cachedTid == 0) {
+        t_cachedTid = gettid();
+        t_tidStringLength =
+            snprintf(t_tidString, sizeof t_tidString, "%5d ", t_cachedTid);
     }
+}
+
+// 为了在线程中保留name,tid这些数据
+struct ThreadData {
+    typedef Thread::ThreadFunc ThreadFunc;
+    ThreadFunc func_;
+    string name_;
+    pid_t* tid_;
+    CountDownLatch* latch_;
+
+    ThreadData(const ThreadFunc& func, const string& name, pid_t* tid,
+              CountDownLatch* latch)
+        : func_(func), name_(name), tid_(tid), latch_(latch) {}
+
+    void runInThread() {
+        *tid_ = CurrentThread::tid(); // Thread类获取tid 
+        tid_ = NULL;                 
+        latch_->countDown();          // 计数减一，因为初始化为1，为零时条件变量通知主线程初始化完成 
+        latch_ = NULL;
+
+        CurrentThread::t_threadName = name_.empty() ? "Thread" : name_.c_str();
+        prctl(PR_SET_NAME, CurrentThread::t_threadName);
+
+        func_();
+        CurrentThread::t_threadName = "finished";
+    }
+};
+
+void* startThread(void* obj) {
+    ThreadData* data = static_cast<ThreadData*>(obj);
+    data->runInThread();
+    delete data;
+    return NULL;
+}
+
+Thread::Thread(const ThreadFunc& func, const string& n)
+      : started_(false),
+        joined_(false),
+        pthreadId_(0),
+        tid_(0),
+        func_(func),
+        name_(n),
+        latch_(1) {
+    setDefaultName();
+}
 
 Thread::~Thread() {
-    if (pthreadId_) {
-        pthread_detach(pthreadId_);
-    }
-    --numThread_;
+    if (started_ && !joined_) pthread_detach(pthreadId_);
 }
 
-void Thread::setDefaultName()
-{
+void Thread::setDefaultName() {
     if (name_.empty()) {
-        int curThreadCnt = numThread_;
         char buf[32];
-        snprintf(buf, sizeof(buf), "Thread_%d", curThreadCnt);
+        snprintf(buf, sizeof buf, "Thread");
         name_ = buf;
     }
 }
 
-void* Thread::run(void* args) {
-    Thread* t = static_cast<Thread*>(args);
-    cur_thread = t;
-    cur_thread_name = t->name_;
-    t->started_ = true;
-    t->task_();
-    return nullptr;
+void Thread::start() {
+    assert(!started_);
+    started_ = true;
+    ThreadData* data = new ThreadData(func_, name_, &tid_, &latch_);
+    // 成功返回0
+    if (pthread_create(&pthreadId_, NULL, &startThread, data)) {
+        started_ = false;
+        delete data;
+    } else {
+        latch_.wait(); // //主线程等待子线程初始化完毕才开始工作，在runInThread()中
+        assert(tid_ > 0);
+    }
 }
 
-// 回收线程
-void Thread::join() {
-    if (pthreadId_) {
-        int r = pthread_join(pthreadId_, nullptr);
-        if (r) {
-            throw std::logic_error("pthread_join error");
-        }
-        pthreadId_ = 0;
-        joined_ = true;
-    }
+int Thread::join() {
+    assert(started_);
+    assert(!joined_);
+    joined_ = true;
+    return pthread_join(pthreadId_, NULL);
 }
 
 }

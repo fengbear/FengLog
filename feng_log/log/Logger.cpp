@@ -75,5 +75,44 @@ void SyncLogger::log(LogEvent::ptr event) {
     }
 }
 
+/*********************************************异步日志器*******************************************/
+AsyncLogger::AsyncLogger(const std::string &name, int flushInterval, AsyncLogAppender::ptr appender)
+    : Logger(name, appender),
+      flushInterval_(flushInterval),
+      mutex_(),
+      cond_(std::make_shared<Condition>(mutex_)),
+      running_(true),
+      thread_(std::make_unique<Thread>([this](){task();}))
+    {
+        thread_->start();
+    }
+
+void AsyncLogger::log(LogEvent::ptr event) {
+    auto level = event->getLevel();
+    if (level >= level_) {
+        for (auto &i : appenders_) {
+            i->append(*event);
+        }
+    }
 }
+
+void AsyncLogger::addAppender(LogAppender::ptr appender) {
+    // 使lambda可以在自定义的function内使用类的成员
+    appender->setNotifyFunc([this](){cond_->notify();});
+    Logger::addAppender(appender);
 }
+
+void AsyncLogger::task() {
+    while (running_ == true) {
+        MutexLockGuard lock(mutex_);
+        cond_->waitForSeconds(flushInterval_);
+        for (auto &appender : appenders_) {
+            if (!appender->empty()) {
+                appender->flush();
+            }
+        }
+    }
+}
+
+} // log
+} // feng

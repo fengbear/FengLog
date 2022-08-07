@@ -10,6 +10,7 @@
 #include "log/LogStream.h"
 #include "log/LogEvent.h"
 #include "base/TimeStamp.h"
+#include "base/CurrentThread.h"
 
 namespace feng {
 namespace log {
@@ -82,13 +83,13 @@ public:
     }
 };
 
-class ThreadNameFormatItem : public LogFormatter::FormatItem {
-public:
-    ThreadNameFormatItem(const std::string &fmt = ""){ }
-    void format(LogStream& os, const LogEvent& event) {
-        os << event.getThreadName();
-    }
-};
+// class ThreadNameFormatItem : public LogFormatter::FormatItem {
+// public:
+//     ThreadNameFormatItem(const std::string &fmt = ""){ }
+//     void format(LogStream& os, const LogEvent& event) {
+//         os << event.getThreadName();
+//     }
+// };
 
 class LineFormatItem : public LogFormatter::FormatItem {
 public:

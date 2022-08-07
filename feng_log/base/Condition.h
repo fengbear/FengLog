@@ -7,11 +7,13 @@
 #include "base/noncopyable.h"
 #include <errno.h>
 #include <time.h>
+#include <memory>
 
 namespace feng {
 
 class Condition : noncopyable {
 public:
+    typedef std::shared_ptr<Condition> ptr;
     explicit Condition(MutexLock& mutex) : mutex_(mutex) {
         pthread_cond_init(&pcond_, NULL);
     }
@@ -44,5 +46,4 @@ private:
 };
 
 }
-
 #endif

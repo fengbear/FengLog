@@ -2,11 +2,13 @@
 #define __FENG_LOG_LOGGER_H__
 
 #include "base/Mutex.h"
+#include "base/Condition.h"
 #include "log/LogEvent.h"
 #include "log/LogAppender.h"
 #include <memory>
 #include <list>
 #include <iostream>
+#include <atomic>
 
 namespace feng {
 namespace log {
@@ -63,6 +65,28 @@ protected:
 
 
 // 异步日志器
+class AsyncLogger : public Logger {
+public:
+    AsyncLogger(const std::string &name, int flushInterval, AsyncLogAppender::ptr appender = nullptr);
+    ~AsyncLogger() {
+        running_ = false;
+        cond_->notifyAll();
+        thread_->join();
+    }
+    void log(LogEvent::ptr event) override;
+    void addAppender(LogAppender::ptr appender) override;
+private:
+    void task();
+private:
+    const int flushInterval_;
+    MutexLock mutex_;
+    Condition::ptr cond_;
+    std::atomic<bool> running_;
+    std::unique_ptr<Thread> thread_;
+};
+
+
+
 
 } // log
 } // feng
